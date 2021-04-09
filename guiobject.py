@@ -59,7 +59,8 @@ class Object:
             if i.size[WIDTH] == 1:
                 i.dim[XPOS] = self.dim[XPOS] * 1
             elif i.size[WIDTH] == -1:
-                
+                i.dim[XPOS] = self.dim[XPOS] + self.dim[WIDTH]*xpos
+                i.dim[WIDTH] = self.dim[WIDTH]-xpos-right_offset
             elif 0 < i.size[WIDTH] and i.size[WIDTH] < 1:
                 i.dim[XPOS] = self.dim[XPOS] + self.dim[WIDTH]*xpos
                 xpos += i.size[WIDTH]
